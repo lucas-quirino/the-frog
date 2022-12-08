@@ -218,12 +218,13 @@ header {
 }
 
 nav .nav-bar {
+   z-index: 999;
    margin-top: 2rem;
    position: fixed;
    left: 0; right: 0; top: 0;
    width: 100%;
    align-items: center;
-   padding: 0 calc(4px + 3.5vw);
+   padding: 0 calc(4px + 6.5vw);
 }
 nav .nav-bar .left {
    width: auto;
@@ -252,6 +253,7 @@ nav .off-canvas {
 /*    4. MAIN
 ________________________________*/
 .main-header {
+   z-index: 555;
    margin-top: -40px;
    display: flex;
    justify-content: center;
@@ -261,15 +263,11 @@ ________________________________*/
    background-color: var(--c-2);
 }
 
-figure .frog {
-   position: absolute;
-   width: 400px;
-   fill: #4711ac;
-}
-
-figure .circle {
-   position: absolute;
-   width: 400px;
+figure.frog {
+   position: fixed;
+   z-index: 777;
+   top: 35vh;
+   width: 60vh;
    fill: #4711ac;
 }
 
@@ -364,7 +362,7 @@ ________________________________*/
    left: 0;
    width: 120%;
    height: 120%;
-   background-color: var(--c-4);
+   background-color: var(--c-1);
    transform-origin: bottom center;
    transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
    transform: skewY(9.3deg) scaleY(0);
@@ -378,6 +376,7 @@ ________________________________*/
 
 .btn-primary:hover span:last-child {
    color: var(--c-2);
+   background-color: tra;
   transform: translateX(-50%) translateY(-100%);
   opacity: 1;
   transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
@@ -398,4 +397,4 @@ ________________________________*/
    .mobile-hide {
      display: none;
    }
- }
+}
