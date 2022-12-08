@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="utf-8">
+
+   <!------- META SCALE ------------->
+   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=5.0">
+
+   <!------- META DESCRIPTION ------------->
+   <meta
+         name="description"
+         content="Você pode encontrar diversos produtos em nossa lojinha:
+                  eletrônicos, moda feminina e masculina, produtos para sua casa e para o seu pet.
+                  Navegue pelo nosso site e venha conhecer nossos produtos.">
+
+   <!------- FAV ICON ------------->
+   <link rel="icon" type="image/x-icon" href="assets/img/favicon.png">
+
+   <!------- REMIX ICONS --------->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+
+   <!----- SETYLESHEET CSS ------->
+   <link rel="stylesheet" Type="text/css" href="assets/css/style.css">
+
+   <!----- SWIPER CSS ------->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+   <title>Lucas</title>
+</head>
+
+<body>
+
+   <div id="page" class="site">
+      <!------- HEADER -------------
+        ------------------------------>
+      <header>
+         <nav>
+            <div class="nav-bar flex-between">
+               <div class="left flex-item">
+                  <button class="btn-primary" role="button">
+                     <span class="text"><h3>THE*FROG</h3></span>
+                     <span><h3>*LUCAS*</h3></span>
+                  </button>
+               </div>
+
+               <div class="right flex-item">
+                  <button class="btn-primary menu-btn" role="button">
+                     <span class="text"><h3>ME*NU</h3></span>
+                     <span><h3>*CLOSE*</h3></span>
+                  </button>
+               </div>
+            </div>
+
+            <div class="off-canvas flex-around">
+               <h3><a href="#">APART</a></h3>
+               <div><a href="#">about me</a></div>
+               <div><a href="#">works</a></div>
+               <button class="btn-primary" role="button">
+                  <span class="text"><a href="#">Let's Talk?</a></span>
+                  <span><a href="#">Contact me</a></span>
+               </button>
+            </div>
+         </nav>
+      </header>
+
+      <!------- MAIN -------------
+        ------------------------------>
+      <main>
+         <div class="main-header container flex-item">
+            <figure class="frog" >
+               <img src="assets/img/frog7.svg" alt="">
+            </figure>
+            <h1>Hi, I'm Lucas Quirino.</h1>
+         </div>
+      </main>
+
+      <!------- FOOTER -------------
+        ------------------------------>
+      <footer>
+      </footer>
+   </div>
+
+
+
+   <!----- SCRIPTS ---------------------------------------->
+   <!----- MAIN JS ---------------------------------------->
+   <script src="assets/js/main.js"></script>
+
+   <!----- SWIPER JS ---------------------------------------->
+   <!-- Swiper JS -->
+   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+   <!-- Initialize Swiper -->
+   <script>
+      var swiper = new Swiper(".mySlider", {
+         slidesPerView: 1,
+         spaceBetween: 20,
+         loop: true,
+         pagination: {
+            el: ".swiper-pagination",
+         },
+      });
+   </script>
+
+</body>
+</html>

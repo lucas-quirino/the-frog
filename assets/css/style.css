@@ -1,0 +1,401 @@
+/* -------------------------------------/
+/--- 1. IMPORT
+/ -----------------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Rubik:wght@300;400;500;600;700;800&display=swap');
+
+/*________________________________*/
+/*    1. ROOT
+________________________________*/
+:root {
+/* ________________________________________
+1a. font family */
+   --ff-titles: 'Anton', sans-serif;
+   --ff-body: 'Lato', sans-serif;
+/* _______________________________________
+1b. font size */
+   --fs-small: 12px;
+   --fs-medium: 14px;
+   --fs-big: ;
+   --fs-body: calc(12px + .2vw);
+   --fs-h1: calc(80px + 5vw);
+   --fs-h2: 2.4em;
+   --fs-h3: calc(22px + .1vw);
+   --fs-h4: calc(10px + .8vw);
+/* ________________________________________
+1c. font weight */
+   --fw-300: 300;
+   --fw-400: 400;
+   --fw-500: 500;
+   --fw-600: 600;
+   --fw-700: 700;
+   --fw-800: 800;
+/* ________________________________________
+1d. colors B and W */
+   --c-bg: #f8f8f8;
+   --c-white: #f8f8f8;
+   --c-grey-light: #d4d4d4;
+   --c-grey: rgba(158, 158, 158, 0.849);
+   --c-grey-medium: rgba(136, 136, 136, 0.849);
+   --c-grey-dark: #3a3a3a;
+   --c-black: #101511;
+/* ________________________________________
+1e. colors */
+   --c-1: #f50000;
+   --c-2: #4711ac;
+   --c-3: #FFFC72;
+   --c-4: #FFD900;
+   --c-5: #101511;
+
+/* ________________________________________
+1f. transitions & animation */
+   --trans-bg-color: background-color .25s, color .25s;
+   --trans-link: color .35s ease-in-out, box-shadow .35s ease-in-out;
+   --anim-slide-down: slide-down 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+   --anim-slide-right: slide-right 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+/* ________________________________________
+1g. shadow */
+   --bs: rgb(0 0 0 / 80%) 35px 35px 30px -35px;
+   --ts-white: 3px 3px 3px #fbffc173;
+   --ts-black: 5px 5px 5px #00000067;
+}
+
+/*________________________________*/
+/*    2. RESET CSS
+________________________________*/
+::-webkit-scrollbar-track {
+   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+   border-radius: 10px;
+   background-color: var(--c-grey-light);
+}
+::-webkit-scrollbar {
+   width: 13px;
+   background-color: var(--c-grey-light);
+}
+::-webkit-scrollbar-thumb {
+   border-radius: 10px;
+   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+   box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+   background-color: var(--c-5);
+}
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   border: 0;
+}
+html {
+   height: 100%;
+   margin: 0;
+   padding: 0;
+}
+body {
+   font-family: var(--ff-body);
+   font-size: var(--fs-body);
+   color: var(--c-black);
+   background-color: var(--c-bg);
+   min-height: 200vh;
+}
+a {
+   color: var(--c-black);
+   transition: var(--trans-link);
+   cursor: pointer;
+   text-decoration: underline;
+}
+a:hover {
+   color: var(--c-2);
+}
+ul,
+ol,
+li {
+   list-style: none;
+   transition: var(--trans-bg-color);
+   -webkit-transition: var(--trans-bg-color);
+}
+img {
+   max-width: 100%;
+   vertical-align: middle;
+}
+strong {
+   font-weight: var(--fw-800);
+}
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+   filter: grayscale(1);
+}
+input::placeholder {
+   font: inherit;
+}
+h1,
+h2,
+h3,
+h4 {
+   font-family: var(--ff-titles);
+}
+h1 {
+   font-size: var(--fs-h1);
+   font-weight: var(--fw-800);
+   line-height: 1;
+}
+h2 {
+   font-size: var(--fs-h2);
+   font-weight: var(--fw-800);
+}
+h3 {
+   font-size: var(--fs-h3);
+   font-weight: var(--fw-700);
+}
+h4 {
+   font-size: var(--fs-h4);
+   font-weight: var(--fw-600);
+}
+
+/*________________________________*/
+/*    3. REUSABLE CLASSES
+________________________________*/
+.container {
+   max-width: 1280px;
+   margin: 0 auto;
+   padding: 0 calc(3px + 2.5vw);
+}
+.column {
+   margin-left: 0.938em;
+   margin-right: 0.938em;
+}
+.column .row {
+   padding: 0 0.938em;
+}
+.flex-wrap {
+   display: flex;
+   flex-wrap: wrap;
+}
+.flex-item {
+   display: flex;
+   align-items: center;
+}
+.flex-center {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.flex-between {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+.flex-around {
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+}
+.flex-column {
+   display: flex;
+   flex-direction: column;
+   gap: 1em;
+}
+.icon-small,
+.icon-large {
+   display: flex;
+   align-items: center;
+   padding: 0 0.25em;
+   font-weight: var(--fw-400);
+}
+.icon-small {
+   font-size: 1.25em;
+}
+.icon-large {
+   font-size: 1.75em;
+}
+
+/*________________________________*/
+/*    4. HEADER
+________________________________*/
+header {
+   margin-top: 100px;
+}
+
+nav .nav-bar {
+   margin-top: 2rem;
+   position: fixed;
+   left: 0; right: 0; top: 0;
+   width: 100%;
+   align-items: center;
+   padding: 0 calc(4px + 3.5vw);
+}
+nav .nav-bar .left {
+   width: auto;
+}
+
+nav .nav-bar .right {
+   background-image: url(../img/);
+   gap: 55px;
+   text-transform: uppercase;
+}
+
+nav .off-canvas {
+   z-index: 999;
+   top: 0; left: 0; right: 0;
+   position: absolute;
+   background: #d8ceeb;
+   width: 100vw;
+   height: 100%;
+   flex-direction: column;
+   display: none;
+}
+
+
+
+/*________________________________*/
+/*    4. MAIN
+________________________________*/
+.main-header {
+   margin-top: -40px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 80vh;
+   flex-direction: column;
+   background-color: var(--c-2);
+}
+
+figure .frog {
+   position: absolute;
+   width: 400px;
+   fill: #4711ac;
+}
+
+figure .circle {
+   position: absolute;
+   width: 400px;
+   fill: #4711ac;
+}
+
+h1 {
+   position: absolute;
+   padding: 0 1.199em;
+}
+
+
+
+/*________________________________*/
+/*    4. FOOTER
+________________________________*/
+
+
+
+
+
+
+
+/* CSS */
+.btn-primary {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--c-black);
+  color: var(--c-black);
+  display: inline-block;
+  line-height: 13px;
+  padding: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  background: var(--c-1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  min-width: 120px; height: 55px;
+}
+
+.btn-primary.menu-btn {
+   background: var(--c-white);
+ }
+
+ .btn-primary.menu-btn:after {
+   color: var(--c-2);
+   background-color: var(--c-1);
+}
+
+.btn-primary a {
+   text-decoration: none;
+}
+
+.btn-primary span:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 1;
+}
+
+.btn-primary span:last-child {
+  color: var(--c-black);
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all .2s cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 3;
+  opacity: 0;
+  top: 65%;
+  left: 50%;
+  transform: translateY(225%) translateX(-50%);
+  height: 14px;
+  line-height: 13px;
+  width: 120px;
+}
+
+.btn-primary:after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--c-white);
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 2;
+}
+
+.btn-primary:before {
+   content: "";
+   position: absolute;
+   bottom: -50%;
+   left: 0;
+   width: 120%;
+   height: 120%;
+   background-color: var(--c-4);
+   transform-origin: bottom center;
+   transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+   transform: skewY(9.3deg) scaleY(0);
+   z-index: 2;
+ }
+
+.btn-primary:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(18.3deg) scaleY(2);
+}
+
+.btn-primary:hover span:last-child {
+   color: var(--c-2);
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+.btn-primary:active:after {
+   transform-origin: bottom center;
+   transform: skewY(18.3deg) scaleY(2);
+ }
+
+ .btn-primary:active span:last-child {
+   transform: translateX(-50%) translateY(-100%);
+   opacity: 1;
+   transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+ }
+
+@media screen and (max-width: 822px) {
+   .mobile-hide {
+     display: none;
+   }
+ }
