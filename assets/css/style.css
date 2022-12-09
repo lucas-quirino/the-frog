@@ -301,7 +301,7 @@ header .main-header {
    align-items: center;
    height: 94vh; width: 100%;
    flex-direction: column;
-   background-color: var(--c-3);
+   background-color: var(--c-2);
 }
 
 header figure.frog {
