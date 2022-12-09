@@ -14,11 +14,11 @@ ________________________________*/
 /* _______________________________________
 1b. font size */
    --fs-small: 12px;
-   --fs-medium: 14px;
+   --fs-medium: calc(13px + .2vw);
    --fs-big: ;
    --fs-body: calc(12px + .2vw);
    --fs-h1: calc(80px + 5vw);
-   --fs-h2: 2.4em;
+   --fs-h2: calc(30px + 1vw);
    --fs-h3: calc(22px + .1vw);
    --fs-h4: calc(10px + .8vw);
 /* ________________________________________
@@ -43,13 +43,12 @@ ________________________________*/
    --c-1: #f50000;
    --c-2: #4711ac;
    --c-3: #FFFC72;
-   --c-4: #FFD900;
-   --c-5: #101511;
+   --c-4: #0f0f0f;
 
 /* ________________________________________
 1f. transitions & animation */
    --trans-bg-color: background-color .25s, color .25s;
-   --trans-link: color .35s ease-in-out, box-shadow .35s ease-in-out;
+   --trans-link: color .25s ease-in-out, box-shadow .25s ease-in-out;
    --anim-slide-down: slide-down 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
    --anim-slide-right: slide-right 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 /* ________________________________________
@@ -102,10 +101,10 @@ a {
    color: var(--c-black);
    transition: var(--trans-link);
    cursor: pointer;
-   text-decoration: underline;
+   text-decoration: none;
 }
 a:hover {
-   color: var(--c-2);
+   color: var(--c-1);
 }
 ul,
 ol,
@@ -213,69 +212,110 @@ ________________________________*/
 /*________________________________*/
 /*    4. HEADER
 ________________________________*/
-header {
-   margin-top: 100px;
-}
-
 nav .nav-bar {
    z-index: 999;
-   margin-top: 2rem;
    position: fixed;
+   margin-top: 2em;
    left: 0; right: 0; top: 0;
    width: 100%;
    align-items: center;
    padding: 0 calc(4px + 6.5vw);
 }
-nav .nav-bar .left {
+nav .nav-bar .left, .right {
    width: auto;
-}
-
-nav .nav-bar .right {
-   background-image: url(../img/);
-   gap: 55px;
    text-transform: uppercase;
 }
-
 nav .off-canvas {
-   z-index: 999;
-   top: 0; left: 0; right: 0;
-   position: absolute;
-   background: #d8ceeb;
-   width: 100vw;
-   height: 100%;
+   z-index: 888;
+   display: flex;
+   position: fixed;
+   top: 55px; right: 0; left: 0;
+   justify-content: center;
+   align-items: center;
+   height: 94vh; width: 100%;
    flex-direction: column;
+   background-color: var(--c-4);
+
    display: none;
+}
+nav .off-canvas figure {
+   opacity: .4;
+}
+nav .off-canvas .menu-items {
+   z-index: 999;
+   position: absolute;
+   top: 15vh;
+   margin: 0 auto;
+   display: grid;
+   color: var(--c-black);
+   height: 20rem;
+   bottom: 10vh; right: calc(7px + 6.2vw);
+}
+nav .off-canvas .item {
+   display: flex;
+   align-items: center;
+   justify-content: flex-end;
+   /* padding-right: calc(4px + 5.4vw); */
+   height: 60px;
+}
+nav .off-canvas .item a {
+   color: var(--c-white);
+}
+nav .off-canvas .item a:hover {
+   color: var(--c-1);
+}
+nav .off-canvas .item h2 {
+   letter-spacing: -1px;
+   text-transform: capitalize;
+   font-size: calc(35px + 1vw);
+}
+ nav .off-canvas .item span {
+   color: var(--c-1);
+}
+nav .off-canvas .menu-contact {
+   font-size: var(--fs-medium);
+   position: absolute;
+   bottom: 10vh; right: calc(7px + 6.2vw);
+   text-align: right;
+   color: var(--c-white);
+   gap: 3rem;
+   display: flex;
+}
+nav .off-canvas .menu-contact a {
+   color: var(--c-white);
+   text-decoration: underline;
 }
 
 
 
-/*________________________________*/
-/*    4. MAIN
-________________________________*/
-.main-header {
+
+
+
+
+header .main-header {
    z-index: 555;
-   margin-top: -40px;
+   position: absolute;
+   top: 55px; left: 0; right: 0;
    display: flex;
    justify-content: center;
    align-items: center;
-   height: 80vh;
+   height: 94vh; width: 100%;
    flex-direction: column;
-   background-color: var(--c-2);
+   background-color: var(--c-3);
 }
 
-figure.frog {
-   position: fixed;
+header figure.frog {
    z-index: 777;
+   position: fixed;
    top: 35vh;
    width: 60vh;
    fill: #4711ac;
 }
 
-h1 {
-   position: absolute;
-   padding: 0 1.199em;
-}
 
+/*________________________________*/
+/*    4. MAIN
+________________________________*/
 
 
 /*________________________________*/
@@ -375,7 +415,7 @@ ________________________________*/
 }
 
 .btn-primary:hover span:last-child {
-   color: var(--c-2);
+   color: var(--c-black);
    background-color: tra;
   transform: translateX(-50%) translateY(-100%);
   opacity: 1;
@@ -393,8 +433,18 @@ ________________________________*/
    transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
  }
 
+
+
+
 @media screen and (max-width: 822px) {
    .mobile-hide {
-     display: none;
+      display: none;
    }
+   nav .off-canvas .menu-contact {
+      flex-wrap: wrap;
+      justify-content: flex-end;
+   }
+}
+@media screen and (min-width: 822px) {
+
 }
