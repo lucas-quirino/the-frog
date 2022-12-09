@@ -235,8 +235,6 @@ nav .off-canvas {
    height: 94vh; width: 100%;
    flex-direction: column;
    background-color: var(--c-4);
-
-   display: none;
 }
 nav .off-canvas figure {
    opacity: .4;
