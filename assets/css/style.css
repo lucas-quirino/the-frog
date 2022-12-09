@@ -43,7 +43,7 @@ ________________________________*/
    --c-1: #f50000;
    --c-2: #4711ac;
    --c-3: #FFFC72;
-   --c-4: #0f0f0f;
+   --c-4: #ff4f4f;
 
 /* ________________________________________
 1f. transitions & animation */
@@ -237,7 +237,7 @@ nav .off-canvas {
    background-color: var(--c-4);
 }
 nav .off-canvas figure {
-   opacity: .4;
+   opacity: .8;
 }
 nav .off-canvas .menu-items {
    z-index: 999;
@@ -257,7 +257,7 @@ nav .off-canvas .item {
    height: 60px;
 }
 nav .off-canvas .item a {
-   color: var(--c-white);
+   color: var(--c-black);
 }
 nav .off-canvas .item a:hover {
    color: var(--c-1);
@@ -275,12 +275,12 @@ nav .off-canvas .menu-contact {
    position: absolute;
    bottom: 10vh; right: calc(7px + 6.2vw);
    text-align: right;
-   color: var(--c-white);
+   color: var(--c-black);
    gap: 3rem;
    display: flex;
 }
 nav .off-canvas .menu-contact a {
-   color: var(--c-white);
+   color: var(--c-black);
    text-decoration: underline;
 }
 
